@@ -29,9 +29,9 @@
     
     
     <entry>
-      <title>1.两数之和</title>
-      <link href="2020/10/27/1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-      <url>2020/10/27/1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+      <title>两数之和</title>
+      <link href="2020/10/27/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+      <url>2020/10/27/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
       
         <content type="html"><![CDATA[<p>leetcode的第一题：两数之和</p><a id="more"></a><p>题目描述：</p><blockquote><p> 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br> 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p></blockquote><p>解题思路：</p><p>创建一个键为数字，值为下标的map，遍历数组，检查map里面有没有这个数相加等于target的数，没有就在map里面加上这个数跟它的下标，有就直接返回这个数的下标跟map里面另一个数的值。</p><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">twoSum</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> []<span class="hljs-title">int</span></span> &#123;m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>)<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ &#123;another := target - nums[i]<span class="hljs-keyword">if</span> _, ok := m[another]; ok &#123;<span class="hljs-keyword">return</span> []<span class="hljs-keyword">int</span>&#123;m[another], i&#125;&#125;m[nums[i]] = i&#125;<span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>&#125;</code></pre><p>时间复杂度应该是O(n)……不知道算得对不对……第一次写题解，可能比较菜</p>]]></content>
       
